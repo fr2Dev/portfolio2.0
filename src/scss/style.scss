@@ -2,7 +2,6 @@
 // SCSS MIXINS
 //----------------------------------*/
 
-@import 'mixins/position';
 @import 'mixins/perso';
 
 //----------------------------------*\
@@ -14,14 +13,14 @@
 @import 'modules/clearfix';
 @import 'modules/defaults';
 @import 'modules/normalize';
+@import 'modules/utilities';
+@import 'modules/icons';
 //----------------------------------*\
 // PARTIALS
 //----------------------------------*/
 
-@import 'partials/header';
 @import 'partials/nav';
-@import 'partials/sidebar';
-@import 'partials/main';
+@import 'partials/hero';
 @import 'partials/footer';
 
 //----------------------------------*\
@@ -29,14 +28,11 @@
 //----------------------------------*/
 
 @import 'modules/buttons';
-@import 'modules/inputs';
-@import 'modules/lists';
 @import 'modules/typography';
 @import 'modules/misc';
 @import 'modules/app';
 
 // Enhancement modules
-@import 'modules/breakpoints';
 @import 'modules/print';
 
 //----------------------------------*\

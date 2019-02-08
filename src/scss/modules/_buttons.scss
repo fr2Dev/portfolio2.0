@@ -1,0 +1,13 @@
+.button {
+  background: $color-main;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  color: $color-white;
+  padding: .3em .75em;
+
+  &--inverted {
+    background: transparent;
+    border-color: $color-main;
+    color: $color-main;
+  }
+}

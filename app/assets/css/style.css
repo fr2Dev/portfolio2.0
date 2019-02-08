@@ -9,20 +9,16 @@
 
 * {
   box-sizing: border-box;
-  font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
 html {
   font-size: 62.5%; }
 
 body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
-  color: #444;
-  transition: all .4s .3s ease-in; }
+  color: #444; }
 
 body, html {
-  min-height: 100vh;
-  overflow: hidden; }
+  min-height: 100vh; }
 
 img {
   width: 100%; }
@@ -31,6 +27,19 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0; }
+
+h1,
+h2,
+h3,
+h4 h5,
+h6,
+p {
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: inherit;
+  text-decoration: inherit; }
 
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -161,10 +170,6 @@ dfn {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
 /**
  * Add the correct background and color in IE 9-.
  */
@@ -398,30 +403,239 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-.logo {
-  margin: -58px 0 0 -100px;
-  position: absolute;
-  top: 50%;
-  left: 50%; }
+.u-flex {
+  display: -ms-flexbox;
+  display: flex; }
 
-.nav ul {
-  list-style: none; }
+.icon {
+  width: 3rem;
+  height: 3rem; }
 
-.card {
-  background: #eeeeee;
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  font-family: 'Montserrat', sans-serif;
-  height: 45rem;
-  overflow: hidden;
-  position: relative;
-  padding: 1.5rem;
-  width: 27rem; }
+.navbar {
+  width: 100%;
+  height: 5rem;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 1.3rem 2rem; }
+  .navbar__icon, .navbar__icon::before, .navbar__icon::after {
+    width: 3rem;
+    height: 2px;
+    background: #4D1577;
+    border-radius: 10px; }
+    .navbar__icon::before, .navbar__icon::after {
+      content: "";
+      display: block;
+      position: absolute;
+      transition: transform .2s ease-out; }
+    .navbar__icon::before {
+      top: 3px; }
+    .navbar__icon::after {
+      bottom: 3px; }
+  .navbar__logo {
+    width: 4rem; }
+  .navbar__item {
+    color: #4D1577;
+    margin-bottom: 1rem; }
+    .navbar__item.active .navbar__link::after {
+      width: 100%; }
+    @media only screen and (min-width: 1024px) {
+      .navbar__item {
+        margin-left: 6rem; } }
+  .navbar__menu {
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    background: inherit;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: 0%;
+    left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 5rem;
+    width: 100vw;
+    transition: height .3s ease-in-out; }
+    @media only screen and (min-width: 1024px) {
+      .navbar__menu {
+        -ms-flex-direction: row;
+            flex-direction: row;
+        height: 100%;
+        margin-right: inherit;
+        position: inherit;
+        width: auto;
+        top: inherit; } }
+  .navbar__checkbox {
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 0; }
+    .navbar__checkbox:checked ~ .navbar__menu {
+      height: 20rem; }
+      @media only screen and (min-width: 1024px) {
+        .navbar__checkbox:checked ~ .navbar__menu {
+          height: 100%; } }
+    .navbar__checkbox:checked ~ .navbar__label .navbar__icon, .navbar__checkbox:checked ~ .navbar__label .navbar__icon::before, .navbar__checkbox:checked ~ .navbar__label .navbar__icon::after {
+      background: transparent; }
+      .navbar__checkbox:checked ~ .navbar__label .navbar__icon::before {
+        background: #4D1577;
+        top: 10px;
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg); }
+      .navbar__checkbox:checked ~ .navbar__label .navbar__icon::after {
+        background: #4D1577;
+        bottom: 12px;
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  .navbar__label {
+    width: 4rem;
+    height: 100%;
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    cursor: pointer;
+    position: relative;
+    text-indent: -9999px; }
+    @media only screen and (min-width: 1024px) {
+      .navbar__label {
+        display: none; } }
+  .navbar__link {
+    position: relative; }
+    .navbar__link::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #FCC475;
+      border-radius: 50px;
+      bottom: -3px;
+      left: 0;
+      transition: width .25s ease; }
+    .navbar__link:active::after, .navbar__link:focus::after, .navbar__link:hover::after {
+      width: 100%; }
+
+.header {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background: #FDFDFD;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear; }
+
+.headroom--pinned {
+  -ms-transform: translateY(0%);
+      transform: translateY(0%); }
+
+.headroom--unpinned {
+  -ms-transform: translateY(-100%);
+      transform: translateY(-100%); }
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  display: -ms-flexbox;
+  display: flex;
+  background: url("../img/svg/background-hero.svg");
+  background-repeat: no-repeat;
+  background-position: left 65%;
+  padding: 0 2rem; }
+  .hero__container {
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    height: calc(100% - 5rem);
+    padding: 5rem 0; }
+  .hero__button-list, .hero__network {
+    display: -ms-flexbox;
+    display: flex; }
+  .hero__network {
+    margin-top: 2.5rem; }
+  .hero__social-icon:hover {
+    cursor: pointer; }
+  .hero__social-icon:not(:first-of-type) {
+    margin-left: 1rem; }
+  .hero__name {
+    color: #4D1577; }
+    @supports (-webkit-background-clip: text) {
+      .hero__name {
+        background: linear-gradient(to right, #4D1577, #CE5EB6, #FCC475);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; } }
+  .hero__button-list {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+  .hero__button:not(:first-of-type) {
+    margin-left: 2rem; }
+
+.button {
+  background: #4D1577;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #FDFDFD;
+  padding: .3em .75em; }
+  .button--inverted {
+    background: transparent;
+    border-color: #4D1577;
+    color: #4D1577; }
 
 @font-face {
-  font-family: 'Western-Bang-Bang';
-  src: url("../fonts/Western-Bang-Bang.otf");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-display: swap;
+  src: local("Montserrat"), url(../fonts/Montserrat-Regular.woff2) format("woff2"), url(../fonts/Montserrat-Regular.woff) format("woff"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/Montserrat-Medium.woff2) format("woff2"), url(../fonts/Montserrat-Medium.woff) format("woff"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/Montserrat-Bold.woff2) format("woff2"), url(../fonts/Montserrat-Bold.woff) format("woff"); }
+
+body {
+  font: 400 13px/1.6 'Montserrat', sans-serif; }
+
+.hero__name {
+  font-size: 2.5rem;
+  font-weight: 400; }
+
+.hero__job {
+  font-size: 2.5rem;
+  font-weight: 700; }
+
+.button {
+  font-weight: 500;
+  font-size: 1.6rem; }
 
 ::-moz-selection {
   background: #333;
@@ -446,14 +660,12 @@ textarea {
 .container {
   -ms-flex-align: center;
       align-items: center;
-  background: #fdfdfd;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  padding: 2rem;
-  height: 100vh;
-  width: 100vw; }
+  -ms-flex-direction: column;
+      flex-direction: column;
+  max-width: 1248px;
+  width: 100%; }
 
 @media print {
   * {

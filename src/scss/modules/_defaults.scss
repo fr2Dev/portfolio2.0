@@ -1,19 +1,18 @@
 * {
   box-sizing: border-box;
-  font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
   color: #444;
-  transition: all .4s .3s ease-in;
 }
+
 body,html{
 	min-height: 100vh;
-	overflow: hidden;
 }
 
 img {
@@ -24,4 +23,20 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit; 
+  text-decoration: inherit;
 }

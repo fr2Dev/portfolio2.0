@@ -1,10 +1,170 @@
-.nav {
-  ul {
-    list-style: none;
-    li {
-      a {
+.navbar {
+  @include box(100%, $navbar-height);
 
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3rem 2rem;
+
+  &__icon {
+    @include box(3rem, 2px);
+
+    background: $color-main;
+    border-radius: 10px;
+
+    &::before,
+    &::after {
+      @include pseudo;
+      @extend .navbar__icon;
+
+      transition: transform .2s ease-out;
+    }
+
+    &::before {
+      top: 3px;
+    }
+
+    &::after {
+      bottom: 3px;
+    }
+  }
+
+  &__logo {
+    width: 4rem;
+  }
+
+  &__item {
+    color: $color-main;
+    margin-bottom: 1rem;
+
+    &.active .navbar__link{
+  
+      &::after {
+        width: 100%;
+      }
+    }
+
+    @include mq(tablet-wide) {
+      margin-left: 6rem;
+    }
+  }
+
+  &__menu {
+    @include flex-center;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 0%;
+    left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 5rem;
+    width: 100vw;
+    transition: height .3s ease-in-out;
+
+    @include mq(tablet-wide) {
+      flex-direction: row;
+      height: 100%;
+      margin-right: inherit;
+      position: inherit;
+      width: auto;
+      top: inherit;
+    }
+  }
+
+  &__checkbox {
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+
+
+    &:checked ~ .navbar__menu {
+      @include mq(tablet-wide) {
+        height: 100%;
+      }
+
+      height: 20rem;
+    }
+
+    &:checked ~ .navbar__label .navbar__icon {
+      background: transparent;
+
+      &::before {
+        background: $color-main;
+        top: 10px;
+        transform: rotate(135deg);
+      }
+
+      &::after {
+        background: $color-main;
+        bottom: 12px;
+        transform: rotate(-135deg);
       }
     }
   }
+
+
+  &__label {
+    @include box(4rem, 100%);
+    @include flex-center;
+    
+    cursor: pointer;
+    position: relative;
+    text-indent: -9999px;
+
+    @include mq(tablet-wide) {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      @include box(0, 2px);
+
+      background: $color-second;
+      border-radius: 50px;
+      bottom: -3px;
+      left: 0;
+      transition: width .25s ease;
+    }
+    
+    &:active,
+    &:focus,
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  
+}
+
+.header {
+  @include flex-center;
+  @include box-shadow-elevation;
+
+  background: $color-white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+// Sticky header on scroll top
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
 }
