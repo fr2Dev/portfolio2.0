@@ -1,18 +1,21 @@
 .hero {
-  @include box(100%, 100vh);
+  @include box(100%);
   
   align-items: flex-end;
   display: flex;
-  background: url('../img/svg/background-hero.svg');
-  background-repeat: no-repeat;
-  background-position: left 65%;
-  padding: 0 $padding-y;
+  padding-top: $navbar-height;
+  // background: url('../img/svg/background-hero-bottom.svg');
+  // background-repeat: no-repeat;
+  // background-position: center bottom;
+  // background-size: cover;
+  // padding: 0 $padding-y;
 
   // margin-top: $navbar-height;
 
   &__container {
     // align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    // justify-content: center;
     height: calc(100% - 5rem);
     padding: 5rem 0;
   }
@@ -23,13 +26,15 @@
   }
 
   &__network {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
   }
 
   &__social-icon {
+    transition: transform .05s;
 
     &:hover {
       cursor: pointer;
+      transform: scale(1.1);
     }
 
     &:not(:first-of-type) {
@@ -40,18 +45,25 @@
   &__name {
     color: $color-main;
 
-    @supports (-webkit-background-clip: text) {
-      background: $gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    &:hover {
+
+      // @supports (-webkit-background-clip: text) {
+      //   background: $gradient;
+      //   background-clip: text;
+      //   -webkit-background-clip: text;
+      //   -webkit-text-fill-color: transparent;
+      // }
     }
+
+  }
+
+  &__description {
+    padding: 0 $padding-y;
   }
 
   &__button-list {
-    // align-items: center;
     display: flex;
-    // justify-content: space-evenly;
+    padding: 4.5rem $padding-y 0 $padding-y;
     width: 100%;
   }
 
@@ -61,11 +73,82 @@
     }
   }
 
+  &__image {
+    padding: 2rem 0;
+    object-fit: cover;
+    width: 90%;
+  }
+
   &__illustration {
-    // background: url('../img/svg/background-hero-mobile.svg');
-    // background-repeat: no-repeat;
-    // background-position: right 50%;
+    background: url('../img/svg/background-hero.svg');
+    background-repeat: no-repeat;
+    background-position: left 50%;
     // height: 20rem;
-    // width: 100%;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__heading {
+    position: relative;
+
+    &:before {
+      @include linear-gradient(to right, $gradient1);
+
+      animation: animation-background 1.5s cubic-bezier(.19, 1, .22, 1) forwards;
+      animation-delay: 1s;
+      border-radius: $border-radius;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 0;
+      z-index: 2;
+    }
+
+    
+    &--2 {
+      &:before {
+        animation-delay: 2s;
+        background: #444;
+      }
+    }
+  }
+
+  &__title {
+    opacity: 0;
+    animation: animation-text .001s linear forwards;
+    animation-delay: 1.4s;
+    
+    &--2 {
+        animation-delay: 2.4s;
+    }
+  }
+}
+
+// Keyframes
+@keyframes animation-background {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  
+  50% {
+    left: 0;
+    width: 105%;
+  }
+  
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+@keyframes animation-text {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
   }
 }

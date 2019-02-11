@@ -6,7 +6,9 @@ $color-third: #CE5EB6;
 $color-white: #FDFDFD;
 $color-white-ghost: #F8F8FF;
 
-$gradient: linear-gradient(to right, $color-main, $color-third, $color-second);
+$gradient1: ($color-main, $color-third, $color-second);
+$gradient2: ($color-main, $color-third);
+$gradient3: ($color-third, $color-second);
 
 // Sizes
 $navbar-height: 5rem;

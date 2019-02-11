@@ -1,3 +1,7 @@
 .icon {
   @include box(3rem);
+
+  &--skills {
+    @include box(5rem);
+  }
 }

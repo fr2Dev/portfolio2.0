@@ -1,0 +1,39 @@
+.portfolio {
+
+  &__list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    @include linear-gradient(to bottom, $gradient1);
+
+    padding: 3px;
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    width: 100%;
+
+    & a {
+      @include flex-center;
+
+    }
+
+    & img {
+      border-radius: $border-radius;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      transition: filter .15s, transform .35s ease-out;
+    }
+
+    &:hover,
+    &:focus {
+      & img {
+        -webkit-filter: none;
+        filter: none;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -24,21 +24,21 @@
             <input type="checkbox" name="menu" id="menu" class="navbar__checkbox">
             <label for="menu" class="navbar__label"><span class="navbar__icon"></span></label>
             <ul class="navbar__menu">
-              <li class="navbar__item"><a class="navbar__link scroll" href="#skill" aria-label="skill">Skill</a></li>
+              <li class="navbar__item"><a class="navbar__link scroll" href="#skills" aria-label="skill">Skill</a></li>
               <li class="navbar__item"><a class="navbar__link scroll" href="#portfolio" aria-label="portfolio">Portfolio</a></li>
               <li class="navbar__item"><a class="navbar__link scroll" href="#contact" aria-label="contact">Contact</a></li>
-              <li class="navbar__item"><a class="navbar__link scroll" href="#cv" aria-label="cv">Cv</a></li>
+              <li class="navbar__item"><a class="navbar__link scroll" href="docs/CvFD.pdf" aria-label="cv">Cv</a></li>
             </ul>
           </nav>
       </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero__container">
-        <div class="hero__title">
-          <h1 class="hero__name">Francois Degrincourt</h1>
-          <h2 class="hero__job">Développeur Web</h2>
+        <div class="hero__description">
+          <h1 class="hero__heading hero__name"><span class="hero__title">Francois Degrincourt</span></h1>
+          <h2 class="hero__heading hero__heading--2 hero__job"><span class="hero__title hero__title--2">Développeur Web</span></h2>
           <ul class="hero__network">
             <li class="hero__social-icon">
               <a href="https://github.com/fr2Dev" aria-label="Profil github" target="_blank" rel="noopener">
@@ -63,12 +63,157 @@
             </li>
           </ul>
         </div>
-        <div class="hero__illustration"></div>
+        <!-- <div class="hero__illustration"></div> -->
+        <!-- <img src="./assets/img/svg/background-hero.svg" alt="" class="hero__image"> -->
         <div class="hero__button-list">
           <a class="button hero__button">Contact</a>
           <a class="button button--inverted hero__button">Portfolio</a>
         </div>
+        <!-- <img src="./assets/img/svg/background-hero.svg" alt="" class="hero__image"> -->
+
       </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <h3 class="heading--3" data-title="skills">Skills</h3>
+      <div class="card">
+        <h4 class="card__title heading--4">Front-end</h4>
+        <!-- Front end -->
+        <ul class="card__list">
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-html5" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-css3" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-javascript" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-sass" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-jquery" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-react" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <!-- Back-end -->
+      <div class="card">
+        <h4 class="card__title heading--4">Back-end</h4>
+        <ul class="card__list">
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-php" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-mysql" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-wordpress" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <!-- Design -->
+      <div class="card">
+        <h4 class="card__title heading--4">Design</h4>
+        <ul class="card__list">
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-photoshop" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-adobe-xd" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <!-- Workflow -->
+      <div class="card">
+        <h4 class="card__title heading--4">Workflow</h4>
+        <ul class="card__list">
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-git" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-gulp" />
+            </svg>
+          </li>
+          <li class="card__item">
+            <svg class="icon icon--skills">
+              <use xlink:href="#icon-logo-webpack" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+      <h3 class="heading--3" data-title="portfolio">Portfolio</h3>
+      <ul class="portfolio__list">
+        <li class="portfolio__item">
+          <a href="https://francoisdpro.eu/projects/Natours/" class="portfolio__thumbnail" aria-label="Visiter projet 1" target="_blank" rel="noopener">
+            <img data-src="assets/img/png/natours.png" class=" lazyloaded" alt="Natours" src="assets/img/png/natours.png">
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a href="https://francoisdpro.eu/projects/DWJ-projet5/public/index.php" class="thumbnail" aria-label="Visiter projet 2" target="_blank" rel="noopener">
+            <img data-src="assets/img/png/DWJ-projet5-min.png" class=" lazyloaded" alt="Escape game" src="assets/img/png/DWJ-projet5-min.png">
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a href="https://www.francoisdpro.eu/projects/sweet-cafe" class="thumbnail" aria-label="Visiter projet 6" target="_blank" rel="noopener">
+            <img data-src="assets/img/png/sweet-cafe.png" class=" lazyloaded" alt="Sweet café" src="assets/img/png/sweet-cafe.png">
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a href="https://www.francoisdpro.eu/projects/Omnifood" class="thumbnail" aria-label="Visiter projet 4" target="_blank" rel="noopener">
+            <img data-src="assets/img/png/omnifood-min.png" class=" lazyloaded" alt="omnifood" src="assets/img/png/omnifood-min.png">
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a href="https://www.francoisdpro.eu/projects/webfirst" class="thumbnail" aria-label="Visiter projet 5" target="_blank" rel="noopener">
+            <img data-src="assets/img/png/parallax.png" class=" lazyloaded" alt="webfirst" src="assets/img/png/parallax.png">
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a href="https://francoisdpro.eu/projects/DWJ-projet3/" class="thumbnail" aria-label="Visiter projet 3" target="_blank" rel="noopener">
+            <img data-src="assets/img/png/DWJ-projet3-min.png" class=" lazyloaded" alt="Location de vélo" src="assets/img/png/DWJ-projet3-min.png">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h3 class="heading--3" data-title="contact">Contact</h3>
+
     </section>
 
     <!-- SVG SPRITE -->

@@ -15,22 +15,27 @@
 @import 'modules/normalize';
 @import 'modules/utilities';
 @import 'modules/icons';
+
+//----------------------------------*\
+// OBJECTS & MODULES
+//----------------------------------*/
+
+@import 'modules/app';
+@import 'modules/buttons';
+@import 'modules/card';
+@import 'modules/typography';
+@import 'modules/misc';
+
 //----------------------------------*\
 // PARTIALS
 //----------------------------------*/
 
 @import 'partials/nav';
 @import 'partials/hero';
+@import 'partials/skills';
+@import 'partials/portfolio';
+@import 'partials/contact';
 @import 'partials/footer';
-
-//----------------------------------*\
-// OBJECTS & MODULES
-//----------------------------------*/
-
-@import 'modules/buttons';
-@import 'modules/typography';
-@import 'modules/misc';
-@import 'modules/app';
 
 // Enhancement modules
 @import 'modules/print';

@@ -26,20 +26,42 @@ body {
   font: 400 13px/1.6 'Montserrat', sans-serif;
 }
 
-.hero {
+.button {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
 
+// Sections
+
+.heading {
+  &--3 {
+    font-size: 2.2rem;
+
+    &::before {
+      font-size: 250%;
+      text-transform: capitalize;
+    }
+  }
+
+  &--4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+.hero {
   &__name {
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   &__job {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
   }
 }
 
-.button {
+.navbar {
+  font-size: 1.75rem;
   font-weight: 500;
-  font-size: 1.6rem;
 }

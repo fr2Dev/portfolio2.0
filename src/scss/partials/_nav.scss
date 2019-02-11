@@ -2,6 +2,7 @@
   @include box(100%, $navbar-height);
 
   align-items: center;
+  background: $color-white;
   display: flex;
   justify-content: space-between;
   padding: 1.3rem 2rem;

@@ -1,0 +1,35 @@
+.card {
+
+  // background: #999;
+  border: 1px solid $color-third;
+  border-radius: $border-radius;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  position: relative;
+
+  &__list {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    @include flex-center;
+    @include box(7.5rem);
+
+    flex-grow: 1;
+    width: 30%;
+  }
+
+  &__title {
+    background: $color-white;
+    color: $color-main;
+    margin: 0;
+    padding: 0 .6em;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+}
