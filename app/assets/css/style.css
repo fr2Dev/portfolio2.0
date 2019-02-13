@@ -569,7 +569,7 @@ body {
   height: 5rem;
   -ms-flex-align: center;
       align-items: center;
-  background: #FDFDFD;
+  background: #F8F8FF;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -777,6 +777,10 @@ body {
     animation-delay: 1.4s; }
     .hero__title--2 {
       animation-delay: 2.4s; }
+  .hero__image {
+    width: 20rem;
+    margin-right: 2rem;
+    margin-left: auto; }
 
 @keyframes animation-background {
   0% {
