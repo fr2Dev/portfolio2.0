@@ -100,6 +100,6 @@ $breakpoints: (
 }
 
 // Linear gradient
-@mixin linear-gradient($direction, $gradient) {
+@mixin background-linear-gradient($direction, $gradient) {
   background: linear-gradient($direction, $gradient);
 }

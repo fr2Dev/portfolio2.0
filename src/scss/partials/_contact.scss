@@ -1,0 +1,50 @@
+.contact {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+  }
+
+  &__label {
+    color: $color-text;
+    display: block;
+    font-weight: bold;
+    margin-left: 1px;
+    transform: translateY(-5rem);
+    transition: transform .3s;
+    z-index: -1;
+  }
+
+  &__input {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 2px solid rgba($color-text, .75);
+    color: #777;
+    transition: border-color .3s;
+
+    &:focus {
+      border-color: $color-third;
+      outline: none;
+    }
+
+    &:placeholder-shown {
+      border-color: rgba($color-text, .2);
+
+      & + .contact__label {
+        color: $color-text;
+        transform: translateY(-2.7rem);
+      }
+    }
+  }
+
+  &__comment {
+    color: red;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+  }
+}
+
+::placeholder {
+  background: transparent;
+  opacity: 0;
+}

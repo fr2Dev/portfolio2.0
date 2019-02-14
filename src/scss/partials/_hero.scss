@@ -1,7 +1,7 @@
 .hero {
-  @include box(100%, calc(100vh- $navbar-height));
+  @include box(100%, calc(100vh - 5rem));
   
-  align-items: flex-end;
+  // align-items: flex-end;
   display: flex;
   padding-top: $navbar-height;
   // background: url('../img/svg/background-hero-bottom.svg');
@@ -16,7 +16,7 @@
     // align-items: center;
     align-items: flex-start;
     // justify-content: center;
-    height: calc(100% - 5rem);
+    // height: calc(100% - 5rem);
     padding: 5rem 0;
   }
 
@@ -73,11 +73,6 @@
     }
   }
 
-  &__image {
-    padding: 2rem 0;
-    object-fit: cover;
-    width: 90%;
-  }
 
   &__illustration {
     background: url('../img/svg/background-hero.svg');
@@ -92,9 +87,9 @@
     position: relative;
 
     &:before {
-      // @include linear-gradient(to right, $gradient1);
+      // @include background-linear-gradient(to right, $gradient1);
       background: $color-screen;
-      // @include linear-gradient(to right, $gradient-device);
+      // @include background-linear-gradient(to right, $gradient-device);
 
 
       animation: animation-background 1.5s cubic-bezier(.19, 1, .22, 1) forwards;
@@ -114,7 +109,7 @@
         animation-delay: 2s;
         // background: #444;
         background: $color-main;
-        // @include linear-gradient(to right, $gradient-screen);
+        // @include background-linear-gradient(to right, $gradient-screen);
 
       }
     }
@@ -131,9 +126,9 @@
   }
 
   &__image {
-    // width: 20rem;
-    margin-right: 2rem;
-    margin-left: auto;
+    flex-grow: 1;
+    padding: 0 $padding-y;
+    width: 100%;
   }
 }
 

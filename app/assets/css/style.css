@@ -544,6 +544,11 @@ body {
   font-size: 1.75rem;
   font-weight: 500; }
 
+.contact {
+  font-size: 1.6rem; }
+  .contact__input {
+    font-weight: 500; }
+
 ::-moz-selection {
   background: #4D1577;
   color: #fff;
@@ -713,16 +718,13 @@ a {
 
 .hero {
   width: 100%;
-  height: calc(100vh- $navbar-height);
-  -ms-flex-align: end;
-      align-items: flex-end;
+  height: calc(100vh - 5rem);
   display: -ms-flexbox;
   display: flex;
   padding-top: 5rem; }
   .hero__container {
     -ms-flex-align: start;
         align-items: flex-start;
-    height: calc(100% - 5rem);
     padding: 5rem 0; }
   .hero__button-list, .hero__network {
     display: -ms-flexbox;
@@ -748,10 +750,6 @@ a {
     width: 100%; }
   .hero__button:not(:first-of-type) {
     margin-left: 2rem; }
-  .hero__image {
-    padding: 2rem 0;
-    object-fit: cover;
-    width: 90%; }
   .hero__illustration {
     background: url("../img/svg/background-hero.svg");
     background-repeat: no-repeat;
@@ -782,8 +780,10 @@ a {
     .hero__title--2 {
       animation-delay: 2.4s; }
   .hero__image {
-    margin-right: 2rem;
-    margin-left: auto; }
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    padding: 0 2rem;
+    width: 100%; }
 
 @keyframes animation-background {
   0% {
@@ -832,6 +832,56 @@ a {
     filter: none;
     -ms-transform: scale(1.1);
         transform: scale(1.1); }
+
+.contact__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-bottom: 1.6rem; }
+
+.contact__label {
+  color: #444;
+  display: block;
+  font-weight: bold;
+  margin-left: 1px;
+  -ms-transform: translateY(-5rem);
+      transform: translateY(-5rem);
+  transition: transform .3s;
+  z-index: -1; }
+
+.contact__input {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid rgba(68, 68, 68, 0.75);
+  color: #777;
+  transition: border-color .3s; }
+  .contact__input:focus {
+    border-color: #CE5EB6;
+    outline: none; }
+  .contact__input:placeholder-shown {
+    border-color: rgba(68, 68, 68, 0.2); }
+    .contact__input:placeholder-shown + .contact__label {
+      color: #444;
+      -ms-transform: translateY(-2.7rem);
+          transform: translateY(-2.7rem); }
+
+.contact__comment {
+  color: red;
+  margin-bottom: 2rem;
+  margin-top: -2rem; }
+
+::-webkit-input-placeholder {
+  background: transparent;
+  opacity: 0; }
+
+:-ms-input-placeholder {
+  background: transparent;
+  opacity: 0; }
+
+::placeholder {
+  background: transparent;
+  opacity: 0; }
 
 @media print {
   * {

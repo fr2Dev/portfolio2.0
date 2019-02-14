@@ -1,17 +1,33 @@
-/*!
- * fastshell
- * Fiercely quick and opinionated front-ends
- * https://HosseinKarami.github.io/fastshell
- * @author Hossein Karami
- * @version 1.0.5
- * Copyright 2019. MIT licensed.
- */
 (function ($, window, document, undefined) {
 
   'use strict';
 
   $(function () {
-    // FastShell
+    
+    $('#contact-form').submit(function(e){
+
+      e.preventDefault();
+      $('.contact__comment').empty();
+      var postdata = $('#contact-form').serialize();
+    
+      $.ajax({
+        type:'POST',
+        url:'php/contact.php',
+        data: postdata,
+        dataType:'json',
+        success: function(result){
+            if (result.isSuccess) {
+              $("#contact-form").append("<p class='thank-you'>Message envoyé avec succès. Merci de m'avoir contacté !</p>");
+              $("#contact-form")[0].reset();
+            }
+            else {
+              $("#name ~ .contact__comment").html(result.nameError);
+              $("#email ~ .contact__comment").html(result.emailError);
+              $("#message ~ .contact__comment").html(result.messageError);
+            }
+        }
+      });
+    });
   });
 
 })(jQuery, window, document);

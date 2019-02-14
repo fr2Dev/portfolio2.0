@@ -7,7 +7,7 @@
   }
 
   &__item {
-    @include linear-gradient(to bottom, $gradient1);
+    @include background-linear-gradient(to bottom, $gradient1);
 
     padding: 3px;
     border-radius: $border-radius;
