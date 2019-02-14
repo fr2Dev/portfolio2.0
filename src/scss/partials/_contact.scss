@@ -3,6 +3,11 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1.6rem;
+    position: relative;
+
+    &--textarea {
+      margin-bottom: 0;
+    }
   }
 
   &__label {
@@ -13,34 +18,55 @@
     transform: translateY(-5rem);
     transition: transform .3s;
     z-index: -1;
+
+    &--textarea {
+      position: absolute;
+      top: 2rem;
+      transition: all .3s;
+    }
   }
 
   &__input {
     background: rgba(0, 0, 0, 0);
     border: none;
-    border-bottom: 2px solid rgba($color-text, .75);
+    border-bottom: 2px solid $color-main;
     color: #777;
     transition: border-color .3s;
-
-    &:focus {
-      border-color: $color-third;
-      outline: none;
-    }
 
     &:placeholder-shown {
       border-color: rgba($color-text, .2);
 
       & + .contact__label {
-        color: $color-text;
         transform: translateY(-2.7rem);
       }
+
+      & + .contact__label--textarea {
+        top: 2.8rem;
+      }
+    }
+
+    &:focus {
+      border-color: $color-third;
+      outline: none;
     }
   }
 
   &__comment {
-    color: red;
+    color: #f44336;
     margin-bottom: 2rem;
     margin-top: -2rem;
+
+    &--textarea {
+      margin-top: .8rem;
+    }
+  }
+
+  &__rules {
+    opacity: .8;
+  }
+
+  &__button {
+    margin: 2rem 0 3rem;
   }
 }
 

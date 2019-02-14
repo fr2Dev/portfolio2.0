@@ -223,30 +223,18 @@
           <label class="contact__label" for="email">Email *</label>
           <p class="contact__comment">Fake error</p>
         </div>
-        <div class="contact__item">
-          <textarea name="message" id="message" class="contact__input" placeholder="Votre message"  spellcheck="false" rows="4"></textarea>
-          <label class="contact__label" for="message">Message *</label>
-          <p class="contact__comment">Fake error</p>
+        <div class="contact__item contact__item--textarea">
+          <textarea name="message" id="message" class="contact__input contact__input--textarea" placeholder="Votre message"  spellcheck="false" rows="4"></textarea>
+          <label class="contact__label contact__label--textarea" for="message">Message *</label>
+          <p class="contact__comment contact__comment--textarea">Fake error</p>
         </div>
-        <div class="col-md-12">
-          <p><strong>* Ces informations sont requises</strong></p>
-        </div>
-        <div class="col-md-12">
-          <input type="submit" class="button1" id="submitMail" name="envoyer" value="Envoyer" aria-label="Envoyer email">
-        </div>
+        <p class="contact__rules">* Ces informations sont requises</p>
+          <input type="submit" class="button contact__button" id="submitMail" name="envoyer" value="Envoyer" aria-label="Envoyer email">
       </form>
-
-      <!-- <div class="block"> -->
-        <!-- <div class="item">
-          <input type="text" class="input" placeholder="Pseudo">
-          <label for="input" class="label">Pseudo</label>
-        </div>
-          <div class="item">
-            <input type="email" class="input" placeholder="Email">
-            <label for="input" class="label">Email</label>
-        </div> -->
-      <!-- </div> -->
     </section>
+
+    <!-- FOOTER -->
+    <footer class="footer"><span class="footer__brand">francoisdpro.eu</span> &copy; 2019</footer>
 
     <!-- SVG HERO  -->
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" id="hero-illustration" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate" viewBox="-2668.896 -13953.521 2588.896 1652.146">

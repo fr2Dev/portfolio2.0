@@ -72,4 +72,9 @@ body {
   &__input {
     font-weight: 500;
   }
+
+  &__comment,
+  &__rules {
+    font-size: 1.4rem;
+  }
 }
