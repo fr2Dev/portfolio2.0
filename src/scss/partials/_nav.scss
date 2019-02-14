@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   padding: 1.3rem 2rem;
+  z-index: 3;
 
   &__icon {
     @include box(3rem, 2px);
@@ -81,7 +82,6 @@
     visibility: hidden;
     width: 0;
 
-
     &:checked ~ .navbar__menu {
       @include mq(tablet-wide) {
         height: 100%;
@@ -154,7 +154,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 // Sticky header on scroll top

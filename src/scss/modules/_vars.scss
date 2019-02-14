@@ -3,12 +3,19 @@ $color-main: #4D1577;
 $color-second: #FCC475;
 $color-third: #CE5EB6;
 
+$color-screen: #FFA012;
+$color-screen-light: #FFC774;
+$color-main-light: #5F2C85;
+
 $color-white: #FDFDFD;
 $color-white-ghost: #F8F8FF;
 
 $gradient1: ($color-main, $color-third, $color-second);
 $gradient2: ($color-main, $color-third);
 $gradient3: ($color-third, $color-second);
+$gradient-device: ($color-screen-light, $color-screen);
+$gradient-screen: ($color-main-light, $color-main);
+
 
 // Sizes
 $navbar-height: 5rem;
