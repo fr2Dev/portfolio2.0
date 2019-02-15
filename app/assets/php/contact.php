@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if($array["isSuccess"])
   {
     //Envoie de l'email avec toutes les données
-    $headers = "From: {$array["name"]} <{$array["email"]}>\r\nReply-To: {$array["email"]}";
-    mail($emailTo, "Un message de votre site", $emailText, $headers);
+    // $headers = "From: {$array["name"]} <{$array["email"]}>\r\nReply-To: {$array["email"]}";
+    // mail($emailTo, "fdpro.eu - Contact", $emailText, $headers);
   }
 
   echo json_encode($array);

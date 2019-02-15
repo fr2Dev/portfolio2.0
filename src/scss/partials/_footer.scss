@@ -1,12 +1,22 @@
 .footer {
   @include flex-center;
-  
-  padding: 3rem;
+
   background: #222;
   color: #fff;
+  padding: 3rem;
   text-transform: uppercase;
 
   &__brand {
+    color: $color-main;
+    font-weight: 500;
     margin-right: .5rem;
+
+    @supports (-webkit-background-clip: text) {
+      @include background-linear-gradient(to right, $gradient3);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }

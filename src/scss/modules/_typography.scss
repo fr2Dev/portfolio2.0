@@ -69,7 +69,8 @@ body {
 .contact {
   font-size: 1.6rem;
 
-  &__input {
+  &__input,
+  &__comment {
     font-weight: 500;
   }
 

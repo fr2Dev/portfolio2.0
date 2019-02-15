@@ -546,7 +546,7 @@ body {
 
 .contact {
   font-size: 1.6rem; }
-  .contact__input {
+  .contact__input, .contact__comment {
     font-weight: 500; }
   .contact__comment, .contact__rules {
     font-size: 1.4rem; }
@@ -700,7 +700,7 @@ a {
   -ms-flex-pack: center;
       justify-content: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  background: #FDFDFD;
+  background: #F8F8FF;
   position: fixed;
   top: 0;
   width: 100%;
@@ -877,11 +877,25 @@ a {
     outline: none; }
 
 .contact__comment {
-  color: #f44336;
+  background: #EF5350;
+  color: #fff;
+  padding: 0 .3em;
+  border-radius: 3px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   margin-bottom: 2rem;
-  margin-top: -2rem; }
+  margin-top: -2rem;
+  transition: height .3s; }
   .contact__comment--textarea {
     margin-top: .8rem; }
+
+.contact__asterix {
+  font-weight: bold; }
+  .contact__asterix--success {
+    color: #66BB6A; }
+  .contact__asterix--error {
+    color: #EF5350; }
 
 .contact__rules {
   opacity: .8; }
@@ -908,12 +922,20 @@ a {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  padding: 3rem;
   background: #222;
   color: #fff;
+  padding: 3rem;
   text-transform: uppercase; }
   .footer__brand {
+    color: #4D1577;
+    font-weight: 500;
     margin-right: .5rem; }
+    @supports (-webkit-background-clip: text) {
+      .footer__brand {
+        background: linear-gradient(to right, #CE5EB6, #FCC475);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; } }
 
 @media print {
   * {

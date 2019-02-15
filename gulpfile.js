@@ -5,24 +5,9 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
-    header  = require('gulp-header'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
-    sourcemaps = require('gulp-sourcemaps'),
-    package = require('./package.json');
-
-
-var banner = [
-  '/*!\n' +
-  ' * <%= package.name %>\n' +
-  ' * <%= package.title %>\n' +
-  ' * <%= package.url %>\n' +
-  ' * @author <%= package.author %>\n' +
-  ' * @version <%= package.version %>\n' +
-  ' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
-  ' */',
-  '\n'
-].join('');
+    sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('css', function () {
     return gulp.src('src/scss/style.scss')
@@ -32,7 +17,6 @@ gulp.task('css', function () {
     .pipe(gulp.dest('app/assets/css'))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(header(banner, { package : package }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/assets/css'))
     .pipe(browserSync.reload({stream:true}));
@@ -43,15 +27,27 @@ gulp.task('js',function(){
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
-    .pipe(header(banner, { package : package }))
     .pipe(gulp.dest('app/assets/js'))
     .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-    .pipe(header(banner, { package : package }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/assets/js'))
     .pipe(browserSync.reload({stream:true, once: true}));
+});
+
+gulp.task('js-vendor',function(){
+    gulp.src('src/js/vendor/vendor.js')
+      .pipe(sourcemaps.init())
+      .pipe(jshint('.jshintrc'))
+      .pipe(jshint.reporter('default'))
+      .pipe(gulp.dest('app/assets/js'))
+      .pipe(uglify())
+      .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('app/assets/js/vendor'))
+      .pipe(browserSync.reload({stream:true, once: true}));
 });
 
 gulp.task('browser-sync', function() {

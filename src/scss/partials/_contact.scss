@@ -52,12 +52,30 @@
   }
 
   &__comment {
-    color: #f44336;
+    background: $color-error;
+    color: #fff;
+    padding: 0 .3em;
+    border-radius: $border-radius;
+    width: max-content;
     margin-bottom: 2rem;
     margin-top: -2rem;
+    transition: height .3s;
+    // opacity: 0;
 
     &--textarea {
       margin-top: .8rem;
+    }
+  }
+
+  &__asterix {
+    font-weight: bold;
+
+    &--success {
+      color: $color-success;
+    }
+
+    &--error {
+      color: $color-error;
     }
   }
 

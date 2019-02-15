@@ -178,32 +178,32 @@
       <ul class="portfolio__list">
         <li class="portfolio__item">
           <a href="https://francoisdpro.eu/projects/Natours/" class="portfolio__thumbnail" aria-label="Visiter projet 1" target="_blank" rel="noopener">
-            <img data-src="assets/img/png/natours.png" class=" lazyloaded" alt="Natours" src="assets/img/png/natours.png">
+            <img data-src="assets/img/png/natours.png" class="lazyloaded" alt="Natours" src="assets/img/png/natours.png">
           </a>
         </li>
         <li class="portfolio__item">
           <a href="https://francoisdpro.eu/projects/DWJ-projet5/public/index.php" class="thumbnail" aria-label="Visiter projet 2" target="_blank" rel="noopener">
-            <img data-src="assets/img/png/DWJ-projet5-min.png" class=" lazyloaded" alt="Escape game" src="assets/img/png/DWJ-projet5-min.png">
+            <img data-src="assets/img/png/DWJ-projet5-min.png" class="lazyloaded" alt="Escape game" src="assets/img/png/DWJ-projet5-min.png">
           </a>
         </li>
         <li class="portfolio__item">
           <a href="https://www.francoisdpro.eu/projects/sweet-cafe" class="thumbnail" aria-label="Visiter projet 6" target="_blank" rel="noopener">
-            <img data-src="assets/img/png/sweet-cafe.png" class=" lazyloaded" alt="Sweet café" src="assets/img/png/sweet-cafe.png">
+            <img data-src="assets/img/png/sweet-cafe.png" class="lazyloaded" alt="Sweet café" src="assets/img/png/sweet-cafe.png">
           </a>
         </li>
         <li class="portfolio__item">
           <a href="https://www.francoisdpro.eu/projects/Omnifood" class="thumbnail" aria-label="Visiter projet 4" target="_blank" rel="noopener">
-            <img data-src="assets/img/png/omnifood-min.png" class=" lazyloaded" alt="omnifood" src="assets/img/png/omnifood-min.png">
+            <img data-src="assets/img/png/omnifood-min.png" class="lazyloaded" alt="omnifood" src="assets/img/png/omnifood-min.png">
           </a>
         </li>
         <li class="portfolio__item">
           <a href="https://www.francoisdpro.eu/projects/webfirst" class="thumbnail" aria-label="Visiter projet 5" target="_blank" rel="noopener">
-            <img data-src="assets/img/png/parallax.png" class=" lazyloaded" alt="webfirst" src="assets/img/png/parallax.png">
+            <img data-src="assets/img/png/parallax.png" class="lazyloaded" alt="webfirst" src="assets/img/png/parallax.png">
           </a>
         </li>
         <li class="portfolio__item">
           <a href="https://francoisdpro.eu/projects/DWJ-projet3/" class="thumbnail" aria-label="Visiter projet 3" target="_blank" rel="noopener">
-            <img data-src="assets/img/png/DWJ-projet3-min.png" class=" lazyloaded" alt="Location de vélo" src="assets/img/png/DWJ-projet3-min.png">
+            <img data-src="assets/img/png/DWJ-projet3-min.png" class="lazyloaded" alt="Location de vélo" src="assets/img/png/DWJ-projet3-min.png">
           </a>
         </li>
       </ul>
@@ -212,24 +212,28 @@
     <!-- CONTACT -->
     <section class="contact" id="contact">
       <h3 class="heading--3" data-title="contact">Contact</h3>
-      <form action="php/contact.php" method="post" id="contact-form" class="contact__form">
+      <form action="./assets/php/contact.php" method="post" id="contact-form" class="contact__form">
         <div class="contact__item">
           <input type="text" name="name" id="name" spellcheck="false" class="contact__input" placeholder="Votre nom">
-          <label class="contact__label" for="name">Nom *</label>
-          <p class="contact__comment">Fake error</p>
+          <label class="contact__label" for="name">Nom <span class="contact__asterix">*</span></label>
+          <p class="contact__comment"></p>
+          <!-- <p class="contact__comment">Quel est votre nom ?</p> -->
         </div>
         <div class="contact__item">
           <input type="email" name="email" id="email" spellcheck="false" class="contact__input" placeholder="Votre email">
-          <label class="contact__label" for="email">Email *</label>
-          <p class="contact__comment">Fake error</p>
+          <label class="contact__label" for="email">Email <span class="contact__asterix">*</span></label>
+          <p class="contact__comment"></p>
+          <!-- <p class="contact__comment">Email invalide</p> -->
         </div>
         <div class="contact__item contact__item--textarea">
           <textarea name="message" id="message" class="contact__input contact__input--textarea" placeholder="Votre message"  spellcheck="false" rows="4"></textarea>
-          <label class="contact__label contact__label--textarea" for="message">Message *</label>
-          <p class="contact__comment contact__comment--textarea">Fake error</p>
+          <label class="contact__label contact__label--textarea" for="message">Message <span class="contact__asterix">*</span></label>
+          <p class="contact__comment contact__comment--textarea"></p>
+          <!-- <p class="contact__comment contact__comment--textarea">Quel est votre message ?</p> -->
         </div>
-        <p class="contact__rules">* Ces informations sont requises</p>
-          <input type="submit" class="button contact__button" id="submitMail" name="envoyer" value="Envoyer" aria-label="Envoyer email">
+        <p class="contact__rules"><span class="contact__asterix">*</span> Ces informations sont requises</p>
+        <input type="submit" class="button contact__button" id="submitMail" name="envoyer" value="Envoyer" aria-label="Envoyer email">
+        <p class='thank-you'>Message envoyé avec succès. Merci de m'avoir contacté !</p>
       </form>
     </section>
 
