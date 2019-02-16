@@ -878,15 +878,15 @@ a {
 
 .contact__comment {
   background: #EF5350;
-  color: #fff;
-  padding: 0 .3em;
   border-radius: 3px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  color: #fff;
   margin-bottom: 2rem;
   margin-top: -2rem;
-  transition: height .3s; }
+  padding: 0 .3em;
+  transition: height .3s;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; }
   .contact__comment--textarea {
     margin-top: .8rem; }
 
@@ -901,7 +901,36 @@ a {
   opacity: .8; }
 
 .contact__button {
+  margin-right: 2rem; }
+
+.contact__row-submit {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
   margin: 2rem 0 3rem; }
+
+.contact__form-icons {
+  width: 2.8rem;
+  height: 2.8rem;
+  position: relative; }
+
+.contact__ajax-status {
+  width: 2.8rem;
+  height: 2.8rem;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0; }
+  .contact__ajax-status.visible {
+    opacity: 1; }
+  .contact__ajax-status--spinner {
+    background: transparent;
+    border: 0.65rem #CE5EB6 solid;
+    border-radius: 50%;
+    border-right-color: transparent; }
+    .contact__ajax-status--spinner.visible {
+      animation: spinner-rotation .75s infinite linear; }
 
 ::-webkit-input-placeholder {
   background: transparent;
@@ -914,6 +943,23 @@ a {
 ::placeholder {
   background: transparent;
   opacity: 0; }
+
+.checkmark {
+  stroke-dasharray: 120; }
+  .checkmark.visible {
+    animation: draw-checkmark .85s reverse forwards linear; }
+
+@keyframes spinner-rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes draw-checkmark {
+  from {
+    stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 120; } }
 
 .footer {
   -ms-flex-align: center;
