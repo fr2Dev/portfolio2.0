@@ -7,6 +7,14 @@
   &__container {
     align-items: flex-start;
     padding: 5rem 0;
+    
+    @include mq(phone-wide) {
+      padding: 2rem 0;
+      background: url('../img/svg/isometric-devices.svg');
+      background-repeat: no-repeat;
+      background-position: 90% 50%;
+      background-size: 50% 90%;
+    }
   }
 
   &__button-list,
@@ -51,14 +59,13 @@
     }
   }
 
-  &__illustration {
-    background: url('../img/svg/background-hero.svg');
-    background-repeat: no-repeat;
-    background-position: left 50%;
-    // height: 20rem;
-    flex-grow: 1;
-    width: 100%;
-  }
+  // &__illustration {
+  //   background: url('../img/svg/background-hero.svg');
+  //   background-repeat: no-repeat;
+  //   background-position: left 50%;
+  //   flex-grow: 1;
+  //   width: 100%;
+  // }
 
   &__heading {
     position: relative;
@@ -106,6 +113,10 @@
     flex-grow: 1;
     padding: 0 $padding-y;
     width: 100%;
+
+    @include mq(phone-wide) {
+      display: none;
+    }
   }
 }
 

@@ -19,7 +19,7 @@
     @include box(7.5rem);
 
     flex-grow: 1;
-    width: 30%;
+    width: calc(100% / 3);
   }
 
   &__title {
@@ -30,6 +30,19 @@
     position: absolute;
     top: 0;
     transform: translateY(-50%);
+  }
+
+  @include mq(phone-wide) {
+    height: 100%;
+    width: 48%;
+
+    &:first-child {
+      width: 100%;
+
+      & .card__item {
+        width: calc(100% / 6);
+      }
+    }
   }
 
 }

@@ -4,6 +4,10 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+
+    @include mq(phone-wide) {
+      justify-content: space-around;
+    }
   }
 
   &__item {
@@ -34,6 +38,10 @@
         filter: none;
         transform: scale(1.1);
       }
+    }
+
+    @include mq(phone-wide) {
+      width: 45%;
     }
   }
 }

@@ -136,7 +136,6 @@
     }
     
     &:active,
-    &:focus,
     &:hover {
       &::after {
         width: 100%;
