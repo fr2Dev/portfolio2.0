@@ -902,7 +902,9 @@ a {
             grid-template-columns: minmax(30%, 1.5fr) 3fr;
         -ms-grid-rows: (12rem)[3];
             grid-template-rows: repeat(3, 12rem);
-        grid-template-areas: "front back" "front design" "front workflow";
+        grid-template-areas: "front back"
+ "front design"
+ "front workflow";
         grid-gap: 3.5rem 2rem; } } }
 
 @media only screen and (min-width: 1024px) {
