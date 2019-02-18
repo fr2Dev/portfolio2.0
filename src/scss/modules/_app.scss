@@ -1,10 +1,13 @@
 .container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
   // height: 100%;
-  max-width: 1248px;
+  max-width: 1440px;
   width: 100%;
+
+  &--hero {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .heading {
@@ -36,7 +39,10 @@
   }
 }
 
-section {
+.section {
+  // align-items: center;
+  justify-content: center;
+  display: flex;
   &:not(.hero) {
     padding: 0 $padding-y;
   }

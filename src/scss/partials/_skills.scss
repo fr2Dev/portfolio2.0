@@ -5,6 +5,43 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+
+      @include grid-support {
+        display: grid;
+        grid-template-columns: minmax(30%, 1.5fr) 3fr;
+        grid-template-rows: repeat(3, 12rem);
+        grid-template-areas: 
+        "front back"
+        "front design"
+        "front workflow";
+        grid-gap: 3.5rem 2rem;
+      }
+    }
+  
+    @include mq(tablet-wide) {
+      width: inherit;
+    }
+  }
+
+  & .card {
+    @include mq(phone-wide) {
+      @supports( display: grid) {
+        &:nth-child(1) {
+          grid-area: front;
+        }
+
+        &:nth-child(2) {
+          grid-area: back;
+        }
+
+        &:nth-child(3) {
+          grid-area: design;
+        }
+
+        &:nth-child(4) {
+          grid-area: workflow;
+        }
+      }
     }
   }
 }

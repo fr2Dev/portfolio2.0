@@ -4,9 +4,24 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-
+    
     @include mq(phone-wide) {
       justify-content: space-around;
+
+      @include grid-support {
+        display: grid;
+        grid-gap: 4rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @include mq(tablet-wide) {
+      justify-content: space-around;
+
+      @include grid-support {
+        grid-gap: 5rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 
@@ -21,7 +36,6 @@
 
     & a {
       @include flex-center;
-
     }
 
     & img {
@@ -43,5 +57,18 @@
     @include mq(phone-wide) {
       width: 45%;
     }
+
+    @include mq(tablet-wide) {
+      width: 30%;
+    }
+
+    @include grid-support {
+      width: inherit;
+
+      @include mq(phone-wide) {
+        margin: 0;
+      }
+    }
+
   }
 }

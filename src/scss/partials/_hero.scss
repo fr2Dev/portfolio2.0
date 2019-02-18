@@ -6,14 +6,21 @@
   
   &__container {
     align-items: flex-start;
+    // display: flex;
+    // flex-direction: column;
     padding: 5rem 0;
     
     @include mq(phone-wide) {
-      padding: 2rem 0;
       background: url('../img/svg/isometric-devices.svg');
       background-repeat: no-repeat;
       background-position: 90% 50%;
       background-size: 50% 90%;
+      padding: 2rem 0;
+      justify-content: space-around;
+    }
+    
+    @include mq(tablet-wide) {
+      background-size: 80% 90%;
     }
   }
 
@@ -41,6 +48,10 @@
 
   &__name {
     color: $color-main;
+  }
+
+  &__job {
+    color: #111;
   }
 
   &__description {

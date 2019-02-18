@@ -147,7 +147,7 @@
 
 .header {
   @include flex-center;
-  @include box-shadow-elevation;
+  @include box-shadow-elevation(.08, .13);
 
   background: $color-white-ghost;
   position: fixed;

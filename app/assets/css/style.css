@@ -415,14 +415,15 @@ textarea {
     height: 5rem; }
 
 .container {
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  max-width: 1248px;
+  max-width: 1440px;
   width: 100%; }
+  .container--hero {
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
 
 .heading--3 {
   position: relative;
@@ -445,8 +446,13 @@ textarea {
     background: #FCC475;
     border-radius: 50px; }
 
-section:not(.hero) {
-  padding: 0 2rem; }
+.section {
+  -ms-flex-pack: center;
+      justify-content: center;
+  display: -ms-flexbox;
+  display: flex; }
+  .section:not(.hero) {
+    padding: 0 2rem; }
 
 .button {
   background: #4D1577;
@@ -475,6 +481,11 @@ section:not(.hero) {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+    @media only screen and (min-width: 480px) {
+      @supports ((display: -ms-grid) or (display: grid)) {
+        .card__list {
+          width: 100%;
+          height: 100%; } } }
   .card__item {
     -ms-flex-align: center;
         align-items: center;
@@ -490,6 +501,7 @@ section:not(.hero) {
   .card__title {
     background: #FDFDFD;
     color: #4D1577;
+    left: .6em;
     margin: 0;
     padding: 0 .6em;
     position: absolute;
@@ -500,10 +512,29 @@ section:not(.hero) {
     .card {
       height: 100%;
       width: 48%; }
-      .card:first-child {
-        width: 100%; }
-        .card:first-child .card__item {
-          width: calc(100% / 6); } }
+      @supports ((display: -ms-grid) or (display: grid)) {
+        .card {
+          -ms-flex-align: center;
+              align-items: center;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: center;
+              justify-content: center;
+          width: 100%; }
+          .card--front .card__list {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: (1fr)[2];
+                grid-template-columns: repeat(2, 1fr); }
+            .card--front .card__list .card__item {
+              -ms-flex-align: center;
+                  align-items: center;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-pack: center;
+                  justify-content: center;
+              width: 100%;
+              height: 100%; } } }
 
 @font-face {
   font-family: 'Montserrat';
@@ -529,9 +560,15 @@ body {
 .button {
   font-weight: 500;
   font-size: 1.8rem; }
+  @media only screen and (min-width: 768px) {
+    .button {
+      font-size: 2.4rem; } }
 
 .heading--3 {
   font-size: 2.2rem; }
+  @media only screen and (min-width: 768px) {
+    .heading--3 {
+      font-size: 3rem; } }
   .heading--3::before {
     font-size: 250%;
     text-transform: capitalize; }
@@ -539,25 +576,50 @@ body {
 .heading--4 {
   font-size: 1.8rem;
   font-weight: 500; }
+  @media only screen and (min-width: 768px) {
+    .heading--4 {
+      font-size: 2.4rem; } }
 
 .hero__name {
   font-size: 2.5rem;
   font-weight: 500; }
+  @media only screen and (min-width: 768px) {
+    .hero__name {
+      font-size: 3.4rem; } }
 
 .hero__job {
   font-size: 2.8rem;
   font-weight: 700; }
+  @media only screen and (min-width: 768px) {
+    .hero__job {
+      font-size: 3.8rem; } }
 
 .navbar {
   font-size: 1.75rem;
   font-weight: 500; }
+  @media only screen and (min-width: 768px) {
+    .navbar {
+      font-size: 1.85rem; } }
 
 .contact {
   font-size: 1.6rem; }
+  @media only screen and (min-width: 768px) {
+    .contact {
+      font-size: 1.8rem; } }
   .contact__input, .contact__comment {
     font-weight: 500; }
   .contact__comment, .contact__rules {
     font-size: 1.4rem; }
+    @media only screen and (min-width: 768px) {
+      .contact__comment, .contact__rules {
+        font-size: 1.6rem; } }
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.4rem; } }
+
+.footer__brand {
+  font-weight: 500; }
 
 ::-moz-selection {
   background: #4D1577;
@@ -707,7 +769,7 @@ a {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.13);
   background: #F8F8FF;
   position: fixed;
   top: 0;
@@ -738,11 +800,16 @@ a {
     padding: 5rem 0; }
     @media only screen and (min-width: 480px) {
       .hero__container {
-        padding: 2rem 0;
         background: url("../img/svg/isometric-devices.svg");
         background-repeat: no-repeat;
         background-position: 90% 50%;
-        background-size: 50% 90%; } }
+        background-size: 50% 90%;
+        padding: 2rem 0;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; } }
+    @media only screen and (min-width: 1024px) {
+      .hero__container {
+        background-size: 80% 90%; } }
   .hero__button-list, .hero__network {
     display: -ms-flexbox;
     display: flex; }
@@ -758,6 +825,8 @@ a {
       margin-left: 1rem; }
   .hero__name {
     color: #4D1577; }
+  .hero__job {
+    color: #111; }
   .hero__description {
     padding: 0 2rem; }
   .hero__button-list {
@@ -824,7 +893,32 @@ a {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -ms-flex-pack: justify;
-        justify-content: space-between; } }
+        justify-content: space-between; }
+    @supports ((display: -ms-grid) or (display: grid)) {
+      .skills__list {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(30%, 1.5fr) 3fr;
+            grid-template-columns: minmax(30%, 1.5fr) 3fr;
+        -ms-grid-rows: (12rem)[3];
+            grid-template-rows: repeat(3, 12rem);
+        grid-template-areas: "front back" "front design" "front workflow";
+        grid-gap: 3.5rem 2rem; } } }
+
+@media only screen and (min-width: 1024px) {
+  .skills__list {
+    width: inherit; } }
+
+@media only screen and (min-width: 480px) {
+  @supports ((display: -ms-grid) or (display: grid)) {
+    .skills .card:nth-child(1) {
+      grid-area: front; }
+    .skills .card:nth-child(2) {
+      grid-area: back; }
+    .skills .card:nth-child(3) {
+      grid-area: design; }
+    .skills .card:nth-child(4) {
+      grid-area: workflow; } } }
 
 .portfolio__list {
   -ms-flex-align: center;
@@ -836,7 +930,23 @@ a {
   @media only screen and (min-width: 480px) {
     .portfolio__list {
       -ms-flex-pack: distribute;
-          justify-content: space-around; } }
+          justify-content: space-around; }
+      @supports ((display: -ms-grid) or (display: grid)) {
+        .portfolio__list {
+          display: -ms-grid;
+          display: grid;
+          grid-gap: 4rem;
+          -ms-grid-columns: (1fr)[2];
+              grid-template-columns: repeat(2, 1fr); } } }
+  @media only screen and (min-width: 1024px) {
+    .portfolio__list {
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+      @supports ((display: -ms-grid) or (display: grid)) {
+        .portfolio__list {
+          grid-gap: 5rem;
+          -ms-grid-columns: (1fr)[3];
+              grid-template-columns: repeat(3, 1fr); } } }
 
 .portfolio__item {
   background: linear-gradient(to bottom, #4D1577, #CE5EB6, #FCC475);
@@ -863,6 +973,15 @@ a {
   @media only screen and (min-width: 480px) {
     .portfolio__item {
       width: 45%; } }
+  @media only screen and (min-width: 1024px) {
+    .portfolio__item {
+      width: 30%; } }
+  @supports ((display: -ms-grid) or (display: grid)) {
+    .portfolio__item {
+      width: inherit; }
+      @media only screen and (min-width: 480px) {
+        .portfolio__item {
+          margin: 0; } } }
 
 .contact__item {
   display: -ms-flexbox;
@@ -961,6 +1080,16 @@ a {
     .contact__ajax-status--spinner.visible {
       animation: spinner-rotation .75s infinite linear; }
 
+@media only screen and (min-width: 480px) {
+  .contact__inputs {
+    width: 45%; } }
+
+@media only screen and (min-width: 480px) {
+  .contact__container {
+    background: url("../img/svg/isometric-letter.svg");
+    background-repeat: no-repeat;
+    background-position: 85% 0%; } }
+
 ::-webkit-input-placeholder {
   background: transparent;
   opacity: 0; }
@@ -1003,7 +1132,6 @@ a {
   text-transform: uppercase; }
   .footer__brand {
     color: #4D1577;
-    font-weight: 500;
     margin-right: .5rem; }
     @supports (-webkit-background-clip: text) {
       .footer__brand {

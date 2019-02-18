@@ -95,11 +95,15 @@ $breakpoints: (
 }
 
 // Shadow elevation
-@mixin box-shadow-elevation {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+@mixin box-shadow-elevation($opacity1: .19, $opacity2: .23) {
+    box-shadow: 0 10px 20px rgba(0,0,0,$opacity1), 0 6px 6px rgba(0,0,0,$opacity2);
 }
 
 // Linear gradient
 @mixin background-linear-gradient($direction, $gradient) {
   background: linear-gradient($direction, $gradient);
+}
+
+@mixin grid-support {
+  @supports(display: grid) { @content };
 }
