@@ -122,6 +122,40 @@
     }
   }
 
+  &__form {
+    @include mq(phone-wide) {
+      // width: 45%;
+    }
+  }
+
+  &__inputs {
+    @include mq(phone-wide) {
+      width: 45%;
+    }
+  }
+
+  &__container {
+    @include mq(phone-wide) {
+    //  align-items: center;
+    //  display: flex;
+
+     background: url('../img/svg/isometric-letter.svg');
+      background-repeat: no-repeat;
+      background-position: 85% 0%;
+      // background-size: 27%;
+    }
+  }
+
+  &__illustration {
+    @include mq(phone-wide) {
+      // @include box(100%);
+      // background: url('../img/svg/isometric-letter.svg');
+      // background-repeat: no-repeat;
+      // background-position: 85% 0%;
+      // background-size: 27%;
+    }
+  }
+
   
 
 }

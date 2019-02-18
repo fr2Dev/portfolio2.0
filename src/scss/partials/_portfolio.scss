@@ -4,7 +4,7 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-
+    
     @include mq(phone-wide) {
       justify-content: space-around;
     }
@@ -21,7 +21,6 @@
 
     & a {
       @include flex-center;
-
     }
 
     & img {
@@ -42,6 +41,10 @@
 
     @include mq(phone-wide) {
       width: 45%;
+    }
+
+    @include mq(tablet-wide) {
+      width: 30%;
     }
   }
 }

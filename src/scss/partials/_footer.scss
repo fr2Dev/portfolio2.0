@@ -8,7 +8,6 @@
 
   &__brand {
     color: $color-main;
-    font-weight: 500;
     margin-right: .5rem;
 
     @supports (-webkit-background-clip: text) {

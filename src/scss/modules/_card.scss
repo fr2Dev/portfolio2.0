@@ -1,6 +1,4 @@
 .card {
-
-  // background: #999;
   border: 1px solid $color-third;
   border-radius: $border-radius;
   margin-bottom: 5rem;
@@ -12,6 +10,12 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+
+    @include mq(phone-wide) {
+      @supports(display: grid) {
+        @include box(100%);
+      }
+    }
   }
 
   &__item {
@@ -25,6 +29,7 @@
   &__title {
     background: $color-white;
     color: $color-main;
+    left: .6em;
     margin: 0;
     padding: 0 .6em;
     position: absolute;
@@ -32,17 +37,27 @@
     transform: translateY(-50%);
   }
 
+
   @include mq(phone-wide) {
     height: 100%;
     width: 48%;
+    
+    @supports(display: grid) {
+      @include flex-center;
 
-    &:first-child {
       width: 100%;
 
-      & .card__item {
-        width: calc(100% / 6);
+      &--front {
+        & .card__list {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          
+          & .card__item {
+            @include flex-center;
+            @include box(100%);
+          }
+        }
       }
     }
   }
-
 }
