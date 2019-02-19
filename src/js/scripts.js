@@ -123,6 +123,11 @@
     });
     // END Contact form
 
+    ScrollOut({
+      once: true,
+      threshold: .2
+    });
+
     
   });
 

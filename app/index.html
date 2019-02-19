@@ -2,15 +2,38 @@
 <html class="no-js" lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>fr2Dev</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Francois Degrincourt - Developpeur web front end. Skills: HTML5, CSS3, Sass, Bootstrap, Javascript, jQuery, React, Git, Adobe XD, Photoshop, SQL, PHP.">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Francois Degrincourt - Développeur Web">
+    <meta name="twitter:description" content="Développeur web front-end - Paris">
+    <meta name="twitter:image" content="./assets/img/screenshot.png">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Francois Degrincourt - Développeur Web"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://francoisdpro.eu">
+    <meta property="og:image" content="./assets/img/screenshot.png"/>
+    <meta property="og:description" content="Développeur web front-end - Paris"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    
+    <title>Francois Degrincourt | Developpeur web front end junior</title>
     <link href="assets/css/style.min.css" rel="stylesheet">
 
-    <script src="assets/components/modernizr/modernizr.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Person",
+        "name": "Francois Degrincourt",
+        "jobTitle": "Developpeur Web",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bussy-Saint-Georges",
+          "addressRegion": "Ile de France"
+        }
+      }
+      </script>
+
+    <!-- <script src="assets/components/modernizr/modernizr.js"></script> -->
   </head>
   <body>
 
@@ -42,21 +65,21 @@
           <ul class="hero__network">
             <li class="hero__social-icon">
               <a href="https://github.com/fr2Dev" aria-label="Profil github" target="_blank" rel="noopener">
-                <svg class="icon">
+                <svg class="icon icon--social">
                   <use xlink:href="#icon-logo-github" />
                 </svg>
               </a>
             </li>
             <li class="hero__social-icon">
               <a href="https://www.linkedin.com/in/fran%C3%A7ois-degrincourt-a9a63572/" aria-label="Profil linkedin" target="_blank" rel="noopener">
-                <svg class="icon">
+                <svg class="icon icon--social">
                   <use xlink:href="#icon-logo-linkedin" />
                 </svg>
               </a>
             </li>
             <li class="hero__social-icon">
               <a href="https://twitter.com/fr2_Dev" aria-label="Profil twitter" target="_blank" rel="noopener">
-                <svg class="icon">
+                <svg class="icon icon--social">
                   <use xlink:href="#icon-logo-twitter" />
                 </svg>
               </a>
@@ -74,7 +97,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section class="section skills" id="skills">
+    <section class="section skills" data-scroll id="skills">
       <div class="container">
         <h3 class="heading--3" data-title="skills">Skills</h3>
         <div class="skills__list">
@@ -182,7 +205,7 @@
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="section portfolio" id="portfolio">
+    <section class="section portfolio" data-scroll id="portfolio">
       <div class="container">
         <h3 class="heading--3" data-title="portfolio">Portfolio</h3>
         <ul class="portfolio__list">
@@ -221,7 +244,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section contact" id="contact">
+    <section class="section contact" data-scroll id="contact">
       <div class="container">
         <h3 class="heading--3" data-title="contact">Contact</h3>
         <form action="./assets/php/contact.php" method="post" id="contact-form" class="contact__form">
@@ -530,7 +553,7 @@
       </symbol>
       </defs>
     </svg>
-      
+     
     <script src="assets/js/vendor/vendor.min.js"></script>
     <script src="assets/js/scripts.min.js"></script>
 

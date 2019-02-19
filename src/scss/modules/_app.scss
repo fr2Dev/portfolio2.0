@@ -47,3 +47,16 @@
     padding: 0 $padding-y;
   }
 }
+
+// Animation reveal on scroll - Scrollout
+[data-scroll] {
+  transition: opacity .75s, transform .75s;
+}
+[data-scroll="in"] {
+  opacity: 1;
+  transform: translateX(0);
+}
+[data-scroll="out"] {
+  opacity: 0;
+  transform: translateX(-10rem);
+}

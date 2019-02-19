@@ -45,6 +45,10 @@ body {
       font-size: 3rem;
     }
 
+    @include mq(desktop) {
+      font-size: 3.6rem;
+    }
+
     &::before {
       font-size: 250%;
       text-transform: capitalize;
@@ -69,6 +73,10 @@ body {
     @include mq(tablet) {
       font-size: 3.4rem;
     }
+    
+    @include mq(desktop) {
+      font-size: 4rem;
+    }
   }
 
   &__job {
@@ -77,6 +85,10 @@ body {
 
     @include mq(tablet) {
       font-size: 3.8rem;
+    }
+
+    @include mq(desktop) {
+      font-size: 4.4rem;
     }
   }
 }

@@ -410,6 +410,14 @@ textarea {
 .icon {
   width: 3rem;
   height: 3rem; }
+  @media only screen and (min-width: 768px) {
+    .icon--social {
+      width: 3.5rem;
+      height: 3.5rem; } }
+  @media only screen and (min-width: 1248px) {
+    .icon--social {
+      width: 4rem;
+      height: 4rem; } }
   .icon--skills {
     width: 5rem;
     height: 5rem; }
@@ -454,21 +462,41 @@ textarea {
   .section:not(.hero) {
     padding: 0 2rem; }
 
+[data-scroll] {
+  transition: opacity .75s, transform .75s; }
+
+[data-scroll="in"] {
+  opacity: 1;
+  -ms-transform: translateX(0);
+      transform: translateX(0); }
+
+[data-scroll="out"] {
+  opacity: 0;
+  -ms-transform: translateX(-10rem);
+      transform: translateX(-10rem); }
+
 .button {
   background: #4D1577;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 5px;
   color: #FDFDFD;
   cursor: pointer;
   padding: .3em .75em; }
+  .button:hover, .button:focus {
+    background: #CE5EB6;
+    border-color: #CE5EB6; }
   .button--inverted {
     background: transparent;
     border-color: #4D1577;
     color: #4D1577; }
+    .button--inverted:hover, .button--inverted:focus {
+      background: transparent;
+      border-color: #CE5EB6;
+      color: #CE5EB6; }
 
 .card {
   border: 1px solid #CE5EB6;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-bottom: 5rem;
   padding: 2rem;
   position: relative; }
@@ -569,6 +597,9 @@ body {
   @media only screen and (min-width: 768px) {
     .heading--3 {
       font-size: 3rem; } }
+  @media only screen and (min-width: 1248px) {
+    .heading--3 {
+      font-size: 3.6rem; } }
   .heading--3::before {
     font-size: 250%;
     text-transform: capitalize; }
@@ -586,6 +617,9 @@ body {
   @media only screen and (min-width: 768px) {
     .hero__name {
       font-size: 3.4rem; } }
+  @media only screen and (min-width: 1248px) {
+    .hero__name {
+      font-size: 4rem; } }
 
 .hero__job {
   font-size: 2.8rem;
@@ -593,6 +627,9 @@ body {
   @media only screen and (min-width: 768px) {
     .hero__job {
       font-size: 3.8rem; } }
+  @media only screen and (min-width: 1248px) {
+    .hero__job {
+      font-size: 4.4rem; } }
 
 .navbar {
   font-size: 1.75rem;
@@ -754,7 +791,7 @@ a {
       position: absolute;
       width: 0;
       height: 2px;
-      background: #FCC475;
+      background: #CE5EB6;
       border-radius: 50px;
       bottom: -3px;
       left: 0;
@@ -809,7 +846,7 @@ a {
             justify-content: space-around; } }
     @media only screen and (min-width: 1024px) {
       .hero__container {
-        background-size: 80% 90%; } }
+        background-size: 70% 90%; } }
   .hero__button-list, .hero__network {
     display: -ms-flexbox;
     display: flex; }
@@ -817,7 +854,7 @@ a {
     margin-top: 1.5rem; }
   .hero__social-icon {
     transition: transform .05s; }
-    .hero__social-icon:hover {
+    .hero__social-icon:hover, .hero__social-icon:focus {
       cursor: pointer;
       -ms-transform: scale(1.1);
           transform: scale(1.1); }
@@ -839,10 +876,10 @@ a {
   .hero__heading {
     position: relative; }
     .hero__heading:before {
-      background: #FFA012;
       animation: animation-background 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
       animation-delay: 1s;
-      border-radius: 3px;
+      background: #FFA012;
+      border-radius: 5px;
       content: '';
       height: 100%;
       left: 0;
@@ -902,9 +939,7 @@ a {
             grid-template-columns: minmax(30%, 1.5fr) 3fr;
         -ms-grid-rows: (12rem)[3];
             grid-template-rows: repeat(3, 12rem);
-        grid-template-areas: "front back"
- "front design"
- "front workflow";
+        grid-template-areas: "front back" "front design" "front workflow";
         grid-gap: 3.5rem 2rem; } } }
 
 @media only screen and (min-width: 1024px) {
@@ -953,7 +988,7 @@ a {
 .portfolio__item {
   background: linear-gradient(to bottom, #4D1577, #CE5EB6, #FCC475);
   padding: 3px;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
   margin: 1.5rem 0;
   width: 100%; }
@@ -965,7 +1000,7 @@ a {
     -ms-flex-pack: center;
         justify-content: center; }
   .portfolio__item img {
-    border-radius: 3px;
+    border-radius: 5px;
     filter: grayscale(1);
     transition: filter .15s, transform .35s ease-out; }
   .portfolio__item:hover img, .portfolio__item:focus img {
@@ -1028,7 +1063,7 @@ a {
 
 .contact__comment {
   background: #EF5350;
-  border-radius: 3px;
+  border-radius: 5px;
   color: #fff;
   margin-bottom: 2rem;
   margin-top: -2rem;

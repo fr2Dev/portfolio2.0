@@ -6,8 +6,6 @@
   
   &__container {
     align-items: flex-start;
-    // display: flex;
-    // flex-direction: column;
     padding: 5rem 0;
     
     @include mq(phone-wide) {
@@ -20,7 +18,7 @@
     }
     
     @include mq(tablet-wide) {
-      background-size: 80% 90%;
+      background-size: 70% 90%;
     }
   }
 
@@ -36,7 +34,8 @@
   &__social-icon {
     transition: transform .05s;
 
-    &:hover {
+    &:hover,
+    &:focus {
       cursor: pointer;
       transform: scale(1.1);
     }
@@ -70,25 +69,13 @@
     }
   }
 
-  // &__illustration {
-  //   background: url('../img/svg/background-hero.svg');
-  //   background-repeat: no-repeat;
-  //   background-position: left 50%;
-  //   flex-grow: 1;
-  //   width: 100%;
-  // }
-
   &__heading {
     position: relative;
 
     &:before {
-      // @include background-linear-gradient(to right, $gradient1);
-      background: $color-screen;
-      // @include background-linear-gradient(to right, $gradient-device);
-
-
       animation: animation-background 1.5s cubic-bezier(.19, 1, .22, 1) forwards;
       animation-delay: 1s;
+      background: $color-screen;
       border-radius: $border-radius;
       content: '';
       height: 100%;
@@ -102,9 +89,7 @@
     &--2 {
       &:before {
         animation-delay: 2s;
-        // background: #444;
         background: $color-main;
-        // @include background-linear-gradient(to right, $gradient-screen);
 
       }
     }
@@ -129,6 +114,7 @@
       display: none;
     }
   }
+
 }
 
 // Keyframes

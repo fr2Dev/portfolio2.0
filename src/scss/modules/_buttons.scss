@@ -5,10 +5,34 @@
   color: $color-white;
   cursor: pointer;
   padding: .3em .75em;
+  // transition: background-color .15s linear, border-color .15s linear, color .15s linear;
+  
+  &:hover,
+  &:focus {
+    // background: transparent;
+    // border-color: $color-main;
+    // color: $color-main;
+
+    background: $color-third;
+    border-color: $color-third;
+  }
 
   &--inverted {
     background: transparent;
     border-color: $color-main;
     color: $color-main;
+
+    &:hover,
+    &:focus {
+      // background: $color-main;
+      // border-color: transparent;
+      // color: $color-white;
+      background: transparent;
+      border-color: $color-third;
+      color: $color-third;
+
+
+      
+    }
   }
 }

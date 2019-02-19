@@ -1,6 +1,16 @@
 .icon {
   @include box(3rem);
 
+  &--social {
+    @include mq(tablet) {
+      @include box(3.5rem);
+    }
+  
+    @include mq(desktop) {
+      @include box(4rem);
+    }
+  }
+
   &--skills {
     @include box(5rem);
   }
