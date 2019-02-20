@@ -39,6 +39,10 @@
     color: $color-main;
     margin-bottom: 1rem;
 
+    &:last-of-type {
+      color: $color-third;
+    }
+
     &.active .navbar__link{
   
       &::after {

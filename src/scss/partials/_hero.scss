@@ -17,6 +17,10 @@
       justify-content: space-around;
     }
     
+    @include mq(tablet) {
+      background-size: 60% 90%;
+    }
+    
     @include mq(tablet-wide) {
       background-size: 70% 90%;
     }

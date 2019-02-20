@@ -403,10 +403,6 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-.u-flex {
-  display: -ms-flexbox;
-  display: flex; }
-
 .icon {
   width: 3rem;
   height: 3rem; }
@@ -712,6 +708,8 @@ a {
   .navbar__item {
     color: #4D1577;
     margin-bottom: 1rem; }
+    .navbar__item:last-of-type {
+      color: #CE5EB6; }
     .navbar__item.active .navbar__link::after {
       width: 100%; }
     @media only screen and (min-width: 1024px) {
@@ -844,6 +842,9 @@ a {
         padding: 2rem 0;
         -ms-flex-pack: distribute;
             justify-content: space-around; } }
+    @media only screen and (min-width: 768px) {
+      .hero__container {
+        background-size: 60% 90%; } }
     @media only screen and (min-width: 1024px) {
       .hero__container {
         background-size: 70% 90%; } }
