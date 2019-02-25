@@ -647,12 +647,15 @@ body {
       .contact__comment, .contact__rules {
         font-size: 1.6rem; } }
 
+.footer__brand {
+  font-weight: 500; }
+  @media only screen and (min-width: 768px) {
+    .footer__brand {
+      font-weight: 700; } }
+
 @media only screen and (min-width: 768px) {
   .footer {
     font-size: 1.4rem; } }
-
-.footer__brand {
-  font-weight: 500; }
 
 ::-moz-selection {
   background: #4D1577;

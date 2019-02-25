@@ -125,10 +125,17 @@ body {
 }
 
 .footer {
+
+  &__brand {
+    font-weight: 500;
+
+    @include mq(tablet) {
+      font-weight: 700;
+    }
+  }
+
   @include mq(tablet) {
     font-size: 1.4rem;
   }
-  &__brand {
-    font-weight: 500;
-  }
+
 }
